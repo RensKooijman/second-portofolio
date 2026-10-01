@@ -3,52 +3,93 @@ import { computed, ref } from 'vue'
 
 const projects = [
   {
-    number: '01 / 06',
+    number: '01 / 07',
     title: 'Movie Watcher',
     description: 'A Laravel project exploring a more personal alternative to IMDb, centered around users and their movie discovery experience.',
-    type: 'Laravel / full-stack concept',
+    type: 'Personal media platform / full-stack concept / solo project',
     image: '/projects/movie-watcher-logo.png',
     link: 'https://github.com/RensKooijman/The-movie-watcher',
+    badges: [
+      { label: 'PHP', src: 'https://img.shields.io/badge/PHP-777BB4?style=flat-square&logo=php&logoColor=white' },
+      { label: 'Laravel', src: 'https://img.shields.io/badge/Laravel-FF2D20?style=flat-square&logo=laravel&logoColor=white' },
+      { label: 'Blade', src: 'https://img.shields.io/badge/Blade-FF2D20?style=flat-square&logo=laravel&logoColor=white' },
+    ],
   },
   {
-    number: '02 / 06',
-    title: 'Attendance System',
-    description: 'A solo Laravel and Bootstrap project focused on CRUD operations, data management, and responsive attendance tracking.',
-    type: 'Laravel / Bootstrap',
-    image: '/projects/site2.png',
-    link: 'https://github.com/RensKooijman/crud',
-  },
-  {
-    number: '03 / 06',
-    title: 'Dice',
-    description: 'A digital dice application created to sharpen interface design, programming logic, and independent execution.',
-    type: 'JavaScript / interface',
-    image: '/projects/site3.png',
-    link: 'https://rens-kooijman.com/public/index.php/dice',
-  },
-  {
-    number: '04 / 06',
-    title: 'Krashosting',
-    description: 'A school team project built in 30 hours: explore and purchase hosting packages with a Spring Boot API behind the experience.',
-    type: 'Spring Boot / team project',
-    image: '/projects/site.png',
-    link: 'https://krashosting-lite.tobiasvandeven.nl/home/',
-  },
-  {
-    number: '05 / 06',
-    title: 'Wordle API',
-    description: 'A Laravel backend with accounts, words, leaderboards, API-token middleware, and request throttling for a Wordle-style game.',
-    type: 'Laravel / REST API',
-    image: '/projects/site1.png',
-    link: 'https://github.com/RensKooijman/wordle-api',
-  },
-  {
-    number: '06 / 06',
+    number: '02 / 07',
     title: "Valentine's Proposal",
     description: 'A playful, mobile-friendly interactive Valentine experience with animated styling and a cat-with-flower visual.',
-    type: 'HTML / CSS / JavaScript',
+    type: 'Interactive experience / solo project',
     image: '/projects/valentine-catflower.gif',
     link: 'http://valentine.rens-kooijman.com/',
+    badges: [
+      { label: 'HTML5', src: 'https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white' },
+      { label: 'CSS3', src: 'https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white' },
+      { label: 'JavaScript', src: 'https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=111111' },
+    ],
+  },
+  {
+    number: '03 / 07',
+    title: 'Attendance System',
+    description: 'A solo Laravel and Bootstrap project focused on CRUD operations, data management, and responsive attendance tracking.',
+    type: 'Attendance web application / solo project',
+    image: '/projects/site2.png',
+    link: 'https://github.com/RensKooijman/crud',
+    badges: [
+      { label: 'PHP', src: 'https://img.shields.io/badge/PHP-777BB4?style=flat-square&logo=php&logoColor=white' },
+      { label: 'Laravel', src: 'https://img.shields.io/badge/Laravel-FF2D20?style=flat-square&logo=laravel&logoColor=white' },
+      { label: 'Bootstrap', src: 'https://img.shields.io/badge/Bootstrap-7952B3?style=flat-square&logo=bootstrap&logoColor=white' },
+    ],
+  },
+  {
+    number: '04 / 07',
+    title: 'Spaceships',
+    description: 'A working PHP web project built around reusable Spaceship objects and a simple browser-facing entry point.',
+    type: 'Object-oriented web project / team project',
+    image: '/projects/spaceships.png',
+    link: 'https://github.com/RensKooijman/Spaceships',
+    badges: [
+      { label: 'PHP', src: 'https://img.shields.io/badge/PHP-777BB4?style=flat-square&logo=php&logoColor=white' },
+    ],
+  },
+  {
+    number: '05 / 07',
+    title: 'Dice',
+    description: 'A digital dice application created to sharpen interface design, programming logic, and independent execution.',
+    type: 'Browser game / solo project',
+    image: '/projects/site3.png',
+    link: 'https://rens-kooijman.com/public/index.php/dice',
+    badges: [
+      { label: 'HTML5', src: 'https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white' },
+      { label: 'CSS3', src: 'https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white' },
+      { label: 'JavaScript', src: 'https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=111111' },
+    ],
+  },
+  {
+    number: '06 / 07',
+    title: 'Krashosting',
+    description: 'A school team project built in 30 hours: explore and purchase hosting packages with a Spring Boot API behind the experience.',
+    type: 'Hosting platform / team project',
+    image: '/projects/site.png',
+    link: 'https://krashosting-lite.tobiasvandeven.nl/home/',
+    badges: [
+      { label: 'Java', src: 'https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white' },
+      { label: 'Spring Boot', src: 'https://img.shields.io/badge/Spring_Boot-6DB33F?style=flat-square&logo=springboot&logoColor=white' },
+      { label: 'HTML5', src: 'https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white' },
+    ],
+  },
+  {
+    number: '07 / 07',
+    title: 'Wordle API',
+    description: 'A Laravel backend with accounts, words, leaderboards, API-token middleware, and request throttling for a Wordle-style game.',
+    type: 'Game backend / team project',
+    image: '/projects/site1.png',
+    link: 'https://github.com/RensKooijman/wordle-api',
+    badges: [
+      { label: 'PHP', src: 'https://img.shields.io/badge/PHP-777BB4?style=flat-square&logo=php&logoColor=white' },
+      { label: 'Laravel', src: 'https://img.shields.io/badge/Laravel-FF2D20?style=flat-square&logo=laravel&logoColor=white' },
+      { label: 'REST API', src: 'https://img.shields.io/badge/REST_API-02569B?style=flat-square&logo=fastapi&logoColor=white' },
+    ],
   },
 ]
 
@@ -56,7 +97,10 @@ const experiencePanels = [
   {
     id: 'events',
     label: 'Events',
-    entries: [{ year: '2023', role: 'Hackathon', description: 'A friendly web development competition where students from different institutions collaborate under time pressure. Teams combine coding, design, problem-solving, and presentation skills to create a functional website for a judging panel.' }],
+    entries: [
+      { year: '2025', role: 'School expo', description: 'A friendly web development competition where students from the same institutions participate to showcase their project with the same goals for a judging panel. i became second of this competition.' },
+      { year: '2023', role: 'Hackathon', description: 'A friendly web development competition where students from different institutions collaborate under time pressure. Teams combine coding, design, problem-solving, and presentation skills to create a functional website for a judging panel.' },
+    ],
   },
   {
     id: 'education',
@@ -72,15 +116,19 @@ const experiencePanels = [
     id: 'work',
     label: 'Work',
     entries: [
-      { year: '2022 — now', role: 'Domino’s Pizza', description: 'As a bicycle courier, developing time management, customer service, punctuality, and multitasking skills while keeping service quality high.' },
-      { year: '2021', role: 'McDonald’s', description: 'As a batch cook, learning teamwork, efficiency, consistency, and customer service in a fast-paced working environment.' },
+      { year: '2025 — now', role: 'Solvware', description: 'Working on various projects for different clients, gaining experience in different industries and technologies.' },
+      { year: '2024 — 2025', role: 'Internship(Solvware)', description: 'Gaining hands-on experience in a real-world setting, applying theoretical knowledge to practical situations, and developing professional skills.' },
+      { year: '2022 — 2024', role: 'Domino’s Pizza', description: 'As a bicycle courier, developing time management, customer service, punctuality, and multitasking skills while keeping service quality high.' },
+      { year: '2021 — 2021', role: 'McDonald’s', description: 'As a batch cook, learning teamwork, efficiency, consistency, and customer service in a fast-paced working environment.' },
     ],
   },
   {
     id: 'hobbies',
     label: 'Hobbies',
     entries: [
-      { year: '2018 — now', role: 'Basketball', description: 'Playing and training, building teamwork, leadership, adaptability, communication, and the ability to motivate others.' },
+      { year: '2012 — now', role: 'Gaming', description: 'Exploring various genres, developing strategic thinking, and improving hand-eye coordination through immersive experiences.' },
+      { year: '2026 — now', role: 'Gym', description: 'Regular exercise and training to maintain physical fitness and overall well-being.' },
+      { year: '2018 — 2026', role: 'Basketball', description: 'Playing and training, building teamwork, leadership, adaptability, communication, and the ability to motivate others.' },
       { year: '2014 — 2022', role: 'Tennis', description: 'A mix of fitness, resilience, strategy, quick thinking, and adapting to opponents through both solo and doubles play.' },
       { year: '2018 — 2021', role: 'Chess', description: 'Developing strategic thinking, analytical problem-solving, patience, and decision-making under pressure.' },
       { year: '2012 — 2018', role: 'Soccer', description: 'Learning collaboration through passing, creating opportunities for teammates, and understanding collective success.' },
@@ -150,6 +198,9 @@ function setProjectPage(page) {
             <p class="project-type">{{ project.type }}</p>
             <h3>{{ project.title }}</h3>
             <p>{{ project.description }}</p>
+            <div class="project-badges" aria-label="Technologies used">
+              <img v-for="badge in project.badges" :key="badge.label" :src="badge.src" :alt="badge.label" loading="lazy" />
+            </div>
             <a :href="project.link" target="_blank" rel="noreferrer" class="project-link">Visit project <span aria-hidden="true">↗</span></a>
           </div>
         </article>

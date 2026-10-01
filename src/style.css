@@ -56,6 +56,8 @@ em { color: var(--blue); font-family: Georgia, serif; font-weight: 400; }
 .project-body { max-width: 520px; }
 .project h3 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(2rem, 4vw, 4.6rem); font-weight: 500; letter-spacing: -0.06em; margin: 22px 0 18px; }
 .project-body > p:last-of-type { color: var(--muted); font-size: 0.9rem; line-height: 1.65; max-width: 360px; }
+.project-badges { align-items: center; display: flex; flex-wrap: wrap; gap: 7px; margin-top: 24px; }
+.project-badges img { display: block; height: 22px; width: auto; }
 .project-link { border-bottom: 1px solid var(--blue); display: inline-block; margin-top: 34px; padding-bottom: 9px; }
 .project-pagination { align-items: center; display: flex; gap: 10px; justify-content: flex-end; margin-top: 34px; }
 .project-pagination button { background: transparent; border: 1px solid var(--line); color: var(--paper); cursor: pointer; font-family: 'DM Mono', monospace; font-size: 0.8rem; height: 42px; min-width: 42px; transition: background 200ms ease, border-color 200ms ease, color 200ms ease; }
