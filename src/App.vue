@@ -3,7 +3,7 @@ import { computed, ref } from 'vue'
 
 const projects = [
   {
-    number: '01 / 07',
+    number: '01 / 09',
     title: 'Movie Watcher',
     description: 'A Laravel project exploring a more personal alternative to IMDb, centered around users and their movie discovery experience.',
     type: 'Personal media platform / full-stack concept / solo project',
@@ -16,20 +16,7 @@ const projects = [
     ],
   },
   {
-    number: '02 / 07',
-    title: "Valentine's Proposal",
-    description: 'A playful, mobile-friendly interactive Valentine experience with animated styling and a cat-with-flower visual.',
-    type: 'Interactive experience / solo project',
-    image: '/projects/valentine-catflower.gif',
-    link: 'http://valentine.rens-kooijman.com/',
-    badges: [
-      { label: 'HTML5', src: 'https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white' },
-      { label: 'CSS3', src: 'https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white' },
-      { label: 'JavaScript', src: 'https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=111111' },
-    ],
-  },
-  {
-    number: '03 / 07',
+    number: '02 / 09',
     title: 'Attendance System',
     description: 'A solo Laravel and Bootstrap project focused on CRUD operations, data management, and responsive attendance tracking.',
     type: 'Attendance web application / solo project',
@@ -42,7 +29,7 @@ const projects = [
     ],
   },
   {
-    number: '04 / 07',
+    number: '03 / 09',
     title: 'Spaceships',
     description: 'A working PHP web project built around reusable Spaceship objects and a simple browser-facing entry point.',
     type: 'Object-oriented web project / team project',
@@ -53,7 +40,7 @@ const projects = [
     ],
   },
   {
-    number: '05 / 07',
+    number: '04 / 09',
     title: 'Dice',
     description: 'A digital dice application created to sharpen interface design, programming logic, and independent execution.',
     type: 'Browser game / solo project',
@@ -66,7 +53,7 @@ const projects = [
     ],
   },
   {
-    number: '06 / 07',
+    number: '05 / 09',
     title: 'Krashosting',
     description: 'A school team project built in 30 hours: explore and purchase hosting packages with a Spring Boot API behind the experience.',
     type: 'Hosting platform / team project',
@@ -79,7 +66,20 @@ const projects = [
     ],
   },
   {
-    number: '07 / 07',
+    number: '06 / 09',
+    title: "Valentine's Proposal",
+    description: 'A playful, mobile-friendly interactive Valentine experience with animated styling and a cat-with-flower visual.',
+    type: 'Interactive experience / solo project',
+    image: '/projects/valentine-catflower.gif',
+    link: 'http://valentine.rens-kooijman.com/',
+    badges: [
+      { label: 'HTML5', src: 'https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white' },
+      { label: 'CSS3', src: 'https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white' },
+      { label: 'JavaScript', src: 'https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=111111' },
+    ],
+  },
+  {
+    number: '07 / 09',
     title: 'Wordle API',
     description: 'A Laravel backend with accounts, words, leaderboards, API-token middleware, and request throttling for a Wordle-style game.',
     type: 'Game backend / team project',
@@ -89,6 +89,33 @@ const projects = [
       { label: 'PHP', src: 'https://img.shields.io/badge/PHP-777BB4?style=flat-square&logo=php&logoColor=white' },
       { label: 'Laravel', src: 'https://img.shields.io/badge/Laravel-FF2D20?style=flat-square&logo=laravel&logoColor=white' },
       { label: 'REST API', src: 'https://img.shields.io/badge/REST_API-02569B?style=flat-square&logo=fastapi&logoColor=white' },
+    ],
+  },
+  {
+    number: '08 / 09',
+    title: 'Eigen Site',
+    description: 'My personal website and first portfolio, built with Laravel and Blade and styled with SCSS.',
+    type: 'Personal portfolio / solo project',
+    image: '/projects/eigen-site.svg',
+    link: 'https://www.rens-kooijman.com/',
+    badges: [
+      { label: 'PHP', src: 'https://img.shields.io/badge/PHP-777BB4?style=flat-square&logo=php&logoColor=white' },
+      { label: 'Laravel', src: 'https://img.shields.io/badge/Laravel-FF2D20?style=flat-square&logo=laravel&logoColor=white' },
+      { label: 'Blade', src: 'https://img.shields.io/badge/Blade-FF2D20?style=flat-square&logo=laravel&logoColor=white' },
+      { label: 'SCSS', src: 'https://img.shields.io/badge/SCSS-CC6699?style=flat-square&logo=sass&logoColor=white' },
+    ],
+  },
+  {
+    number: '09 / 09',
+    title: 'Second Portfolio',
+    description: 'This portfolio, rebuilt with Vue 3 and Vite to present my projects, experience, and the technologies I work with.',
+    type: 'Personal portfolio / solo project',
+    image: '/projects/second-portfolio.svg',
+    link: 'https://github.com/RensKooijman/second-portofolio',
+    badges: [
+      { label: 'Vue.js', src: 'https://img.shields.io/badge/Vue.js-4FC08D?style=flat-square&logo=vuedotjs&logoColor=white' },
+      { label: 'Vite', src: 'https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white' },
+      { label: 'JavaScript', src: 'https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=111111' },
     ],
   },
 ]
@@ -136,10 +163,46 @@ const experiencePanels = [
   },
 ]
 
-const skills = Array.from({ length: 12 }, (_, index) => `/projects/image${index + 1}.png`)
+const skillCategories = [
+  { id: 'languages', name: 'Programming Languages', orbitLabel: 'Languages', skills: ['PHP', 'JavaScript', 'C#', 'Java', 'HTML', 'CSS', 'SQL'] },
+  { id: 'frontend', name: 'Frontend Development', orbitLabel: 'Frontend', skills: ['SCSS', 'Bootstrap', 'Tailwind CSS', 'Alpine.js', 'jQuery', 'Chart.js', 'Vue.js'] },
+  { id: 'backend', name: 'Backend Frameworks', orbitLabel: 'Backend', skills: ['Laravel', 'CodeIgniter', 'Livewire', 'Node.js', 'Blazor', 'NestJS', 'FastAPI'] },
+  { id: 'databases', name: 'Databases', orbitLabel: 'Databases', skills: ['MySQL', 'Microsoft SQL Server', 'MongoDB', 'phpMyAdmin'] },
+  { id: 'ai-ml', name: 'AI & Machine Learning', orbitLabel: 'AI / ML', skills: ['ChatGPT', 'Claude', 'Google Gemini', 'GitHub Copilot', 'Ollama', 'YOLO', 'Roboflow', 'Kaggle', 'NumPy', 'Pandas'] },
+  { id: 'packages', name: 'Package Managers', orbitLabel: 'Packages', skills: ['Composer', 'NPM', 'PyPI'] },
+  { id: 'apis-tools', name: 'APIs & Development Tools', orbitLabel: 'API Tools', skills: ['Postman', 'Swagger', 'JSON', 'LanguageTool API', 'ngrok'] },
+  { id: 'cloud-devops', name: 'Cloud & DevOps', orbitLabel: 'Cloud', skills: ['Docker', 'Azure', 'Hostinger'] },
+  { id: 'version-control', name: 'Version Control', orbitLabel: 'Version', skills: ['Git', 'Bitbucket', 'GitHub Copilot'] },
+  { id: 'environment', name: 'Development Environment', orbitLabel: 'Environment', skills: ['XAMPP', 'MAMP', 'Windows Terminal', 'PowerShell', 'FileZilla'] },
+  { id: 'design', name: 'Design & Productivity', orbitLabel: 'Design', skills: ['Figma', 'Adobe', 'Jira', 'Trello'] },
+  { id: 'games', name: 'Game Development', orbitLabel: 'Games', skills: ['Unity'] },
+  { id: 'hardware-iot', name: 'Hardware & IoT', orbitLabel: 'Hardware', skills: ['Raspberry Pi', 'Arduino', 'NFC', 'MQTT'] },
+  { id: 'cms', name: 'CMS & Platforms', orbitLabel: 'CMS', skills: ['Joomla'] },
+]
+
+const activeSkillCategory = ref(skillCategories[0].id)
+const selectedSkillCategory = computed(() => skillCategories.find((category) => category.id === activeSkillCategory.value) ?? skillCategories[0])
+const isSkillCategoryZoomed = ref(false)
+const failedSkillIcons = ref(new Set())
 const activePanel = ref('events')
 const currentProjectPage = ref(1)
 const projectsPerPage = 5
+const skillIconOverrides = {
+  PHP: 'https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/php.svg',
+  JavaScript: 'https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/javascript.svg',
+  'C#': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-plain.svg',
+  Java: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg',
+  'Vue.js': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vuejs/vuejs-original.svg',
+  HTML: 'https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/html5.svg',
+  CSS: 'https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/css.svg',
+  SQL: 'https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/postgresql.svg',
+  'Microsoft SQL Server': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/microsoftsqlserver/microsoftsqlserver-original.svg',
+  Joomla: 'https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/joomla.svg',
+  ChatGPT: 'https://raw.githubusercontent.com/lobehub/lobe-icons/master/packages/static-svg/icons/openai.svg',
+  Azure: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg',
+  PowerShell: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/powershell/powershell-original.svg',
+  Adobe: 'https://cdn.jsdelivr.net/npm/@lobehub/icons-static-svg@latest/icons/adobe.svg',
+}
 const projectPageCount = computed(() => Math.ceil(projects.length / projectsPerPage))
 const paginatedProjects = computed(() => {
   const start = (currentProjectPage.value - 1) * projectsPerPage
@@ -148,6 +211,52 @@ const paginatedProjects = computed(() => {
 
 function setProjectPage(page) {
   currentProjectPage.value = page
+}
+
+function selectSkillCategory(categoryId) {
+  activeSkillCategory.value = categoryId
+  isSkillCategoryZoomed.value = true
+}
+
+function backToSkillCategories() {
+  isSkillCategoryZoomed.value = false
+}
+
+function radialStyle(index, total) {
+  const angle = (360 * index) / total
+  return {
+    '--angle': `${angle}deg`,
+    '--counter-angle': `${-angle}deg`,
+    '--delay': `${index * 55}ms`,
+  }
+}
+
+function skillIconUrl(skill) {
+  if (skillIconOverrides[skill]) return skillIconOverrides[skill]
+
+  const aliases = {
+    SCSS: 'sass',
+    'Tailwind CSS': 'tailwindcss',
+    'Alpine.js': 'alpinedotjs',
+    'Chart.js': 'chartdotjs',
+    'Node.js': 'nodedotjs',
+    'Google Gemini': 'googlegemini',
+    YOLO: 'ultralytics',
+    'LanguageTool API': 'languagetool',
+    'Windows Terminal': 'windowsterminal',
+    'Raspberry Pi': 'raspberrypi',
+    'GitHub Copilot': 'githubcopilot',
+  }
+  const slug = aliases[skill] ?? skill.toLowerCase().replace(/[^a-z0-9]/g, '')
+  return `https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/${slug}.svg`
+}
+
+function skillInitials(skill) {
+  return skill.split(/[\s.]+/).filter(Boolean).map((part) => part[0]).slice(0, 2).join('').toUpperCase()
+}
+
+function markSkillIconFailed(skill) {
+  failedSkillIcons.value.add(skill)
 }
 </script>
 
@@ -164,16 +273,80 @@ function setProjectPage(page) {
 
     <section id="top" class="hero" aria-labelledby="hero-title">
       <div class="portrait-wrap">
-        <div class="skill-orbit" aria-hidden="true">
-          <span v-for="(skill, index) in skills" :key="skill" class="skill-node" :style="{ '--i': index }">
-            <img :src="skill" alt="" />
-          </span>
-        </div>
-        <div class="portrait" role="img" aria-label="Rens Kooijman portrait">
-          <span>RK</span>
-          <img src="/profile.jpg" alt="Rens Kooijman" @error="$event.currentTarget.hidden = true" />
-        </div>
-        <span class="portrait-caption">That’s me<br />in a circle.</span>
+        <Transition name="web-zoom" mode="out-in">
+          <div
+            v-if="!isSkillCategoryZoomed"
+            id="skill-categories"
+            key="categories"
+            class="category-orbit"
+            role="group"
+            aria-label="Tech stack categories"
+          >
+            <button
+              v-for="(category, index) in skillCategories"
+              :key="category.id"
+              class="category-node"
+              :class="{ 'is-active': activeSkillCategory === category.id }"
+              :style="radialStyle(index, skillCategories.length)"
+              type="button"
+              :aria-label="`Show ${category.name} technologies`"
+              :aria-pressed="activeSkillCategory === category.id"
+              :data-label="category.name"
+              @click="selectSkillCategory(category.id)"
+            >
+              <img
+                v-if="!failedSkillIcons.has(category.skills[0])"
+                :src="skillIconUrl(category.skills[0])"
+                alt=""
+                loading="lazy"
+                @error="markSkillIconFailed(category.skills[0])"
+              />
+              <span v-else class="category-node-fallback" aria-hidden="true">{{ skillInitials(category.skills[0]) }}</span>
+              <span class="category-node-label">{{ category.orbitLabel }}</span>
+            </button>
+          </div>
+          <div
+            v-else
+            :key="selectedSkillCategory.id"
+            class="tech-orbit"
+            role="group"
+            :aria-label="`${selectedSkillCategory.name} technologies`"
+          >
+            <div class="tech-orbit-heading">
+              <span class="tech-category-label">{{ selectedSkillCategory.name }}</span>
+            </div>
+            <div
+              v-for="(skill, index) in selectedSkillCategory.skills"
+              :key="skill"
+              class="tech-node"
+              :style="radialStyle(index, selectedSkillCategory.skills.length)"
+              role="img"
+              tabindex="0"
+              :aria-label="`${skill} logo`"
+              :data-label="skill"
+            >
+              <img
+                v-if="!failedSkillIcons.has(skill)"
+                :src="skillIconUrl(skill)"
+                alt=""
+                loading="lazy"
+                @error="markSkillIconFailed(skill)"
+              />
+              <span v-else class="tech-node-fallback" aria-hidden="true">{{ skillInitials(skill) }}</span>
+            </div>
+          </div>
+        </Transition>
+        <Transition name="center-change" mode="out-in">
+          <div v-if="!isSkillCategoryZoomed" key="portrait" class="portrait" role="img" aria-label="Rens Kooijman portrait">
+            <span>RK</span>
+            <img src="/profile.jpg" alt="Rens Kooijman" @error="$event.currentTarget.hidden = true" />
+          </div>
+          <button v-else key="back" class="portrait-back-button" type="button" aria-label="Back to tech stack categories" @click="backToSkillCategories">
+            <span class="portrait-back-arrow" aria-hidden="true">←</span>
+            <span class="portrait-back-label">Back</span>
+          </button>
+        </Transition>
+        <span v-if="!isSkillCategoryZoomed" class="portrait-caption">That’s me<br />in a circle.</span>
       </div>
       <p class="eyebrow">Designer / developer / human</p>
       <h1 id="hero-title">Hi, I’m Rens.<br />I make the<br /><em>web</em> work.</h1>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" fill="none">
+  <rect width="1200" height="675" fill="#23232B"/>
+  <circle cx="1030" cy="90" r="290" fill="#0AD3FF" fill-opacity=".08"/>
+  <path d="M0 520H1200" stroke="#D5BAB2" stroke-opacity=".2"/>
+  <text x="84" y="146" fill="#0AD3FF" font-family="monospace" font-size="24" letter-spacing="5">PERSONAL WEBSITE / 01</text>
+  <text x="80" y="318" fill="#D5BAB2" font-family="Arial, sans-serif" font-size="100" font-weight="700" letter-spacing="-6">RENS</text>
+  <text x="80" y="420" fill="#D5BAB2" font-family="Arial, sans-serif" font-size="100" font-weight="700" letter-spacing="-6">KOOIJMAN<tspan fill="#0AD3FF">.</tspan></text>
+  <text x="88" y="585" fill="#A7ACB1" font-family="monospace" font-size="22" letter-spacing="3">LARAVEL  /  BLADE  /  SCSS</text>
+</svg>
