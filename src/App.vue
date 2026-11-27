@@ -1,5 +1,14 @@
 <script setup>
-import { computed, ref } from 'vue'
+import { computed, nextTick, onMounted, onUnmounted, ref } from 'vue'
+
+const quotes = [
+  { text: 'Nothing is impossible, they are only hard to do.', attribution: 'A personal motto' },
+  { text: 'There is no must, there is only can, and with effort everything can be done.', attribution: 'A personal motto' },
+  { text: 'Practice makes perfect.', attribution: 'A personal motto' },
+  { text: 'A jack of all trades is a master of none, but oftentimes better than a master of one.', attribution: 'A personal motto' },
+  { text: 'Every bug is a clue, and every fix is progress.', attribution: 'A personal motto' },
+  { text: 'Anything that can go wrong will go wrong.', attribution: 'Murphy’s Law' },
+]
 
 const projects = [
   {
@@ -17,82 +26,19 @@ const projects = [
   },
   {
     number: '02 / 09',
-    title: 'Attendance System',
-    description: 'A solo Laravel and Bootstrap project focused on CRUD operations, data management, and responsive attendance tracking.',
-    type: 'Attendance web application / solo project',
-    image: '/projects/site2.png',
-    link: 'https://github.com/RensKooijman/crud',
+    title: 'Second Portfolio',
+    description: 'This portfolio, rebuilt with Vue 3 and Vite to present my projects, experience, and the technologies I work with.',
+    type: 'Personal portfolio / solo project',
+    image: '/projects/second-portfolio.svg',
+    link: 'https://github.com/RensKooijman/second-portofolio',
     badges: [
-      { label: 'PHP', src: 'https://img.shields.io/badge/PHP-777BB4?style=flat-square&logo=php&logoColor=white' },
-      { label: 'Laravel', src: 'https://img.shields.io/badge/Laravel-FF2D20?style=flat-square&logo=laravel&logoColor=white' },
-      { label: 'Bootstrap', src: 'https://img.shields.io/badge/Bootstrap-7952B3?style=flat-square&logo=bootstrap&logoColor=white' },
+      { label: 'Vue.js', src: 'https://img.shields.io/badge/Vue.js-4FC08D?style=flat-square&logo=vuedotjs&logoColor=white' },
+      { label: 'Vite', src: 'https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white' },
+      { label: 'JavaScript', src: 'https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=111111' },
     ],
   },
   {
     number: '03 / 09',
-    title: 'Spaceships',
-    description: 'A working PHP web project built around reusable Spaceship objects and a simple browser-facing entry point.',
-    type: 'Object-oriented web project / team project',
-    image: '/projects/spaceships.png',
-    link: 'https://github.com/RensKooijman/Spaceships',
-    badges: [
-      { label: 'PHP', src: 'https://img.shields.io/badge/PHP-777BB4?style=flat-square&logo=php&logoColor=white' },
-    ],
-  },
-  {
-    number: '04 / 09',
-    title: 'Dice',
-    description: 'A digital dice application created to sharpen interface design, programming logic, and independent execution.',
-    type: 'Browser game / solo project',
-    image: '/projects/site3.png',
-    link: 'https://rens-kooijman.com/public/index.php/dice',
-    badges: [
-      { label: 'HTML5', src: 'https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white' },
-      { label: 'CSS3', src: 'https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white' },
-      { label: 'JavaScript', src: 'https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=111111' },
-    ],
-  },
-  {
-    number: '05 / 09',
-    title: 'Krashosting',
-    description: 'A school team project built in 30 hours: explore and purchase hosting packages with a Spring Boot API behind the experience.',
-    type: 'Hosting platform / team project',
-    image: '/projects/site.png',
-    link: 'https://krashosting-lite.tobiasvandeven.nl/home/',
-    badges: [
-      { label: 'Java', src: 'https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white' },
-      { label: 'Spring Boot', src: 'https://img.shields.io/badge/Spring_Boot-6DB33F?style=flat-square&logo=springboot&logoColor=white' },
-      { label: 'HTML5', src: 'https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white' },
-    ],
-  },
-  {
-    number: '06 / 09',
-    title: "Valentine's Proposal",
-    description: 'A playful, mobile-friendly interactive Valentine experience with animated styling and a cat-with-flower visual.',
-    type: 'Interactive experience / solo project',
-    image: '/projects/valentine-catflower.gif',
-    link: 'http://valentine.rens-kooijman.com/',
-    badges: [
-      { label: 'HTML5', src: 'https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white' },
-      { label: 'CSS3', src: 'https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white' },
-      { label: 'JavaScript', src: 'https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=111111' },
-    ],
-  },
-  {
-    number: '07 / 09',
-    title: 'Wordle API',
-    description: 'A Laravel backend with accounts, words, leaderboards, API-token middleware, and request throttling for a Wordle-style game.',
-    type: 'Game backend / team project',
-    image: '/projects/site1.png',
-    link: 'https://github.com/RensKooijman/wordle-api',
-    badges: [
-      { label: 'PHP', src: 'https://img.shields.io/badge/PHP-777BB4?style=flat-square&logo=php&logoColor=white' },
-      { label: 'Laravel', src: 'https://img.shields.io/badge/Laravel-FF2D20?style=flat-square&logo=laravel&logoColor=white' },
-      { label: 'REST API', src: 'https://img.shields.io/badge/REST_API-02569B?style=flat-square&logo=fastapi&logoColor=white' },
-    ],
-  },
-  {
-    number: '08 / 09',
     title: 'Eigen Site',
     description: 'My personal website and first portfolio, built with Laravel and Blade and styled with SCSS.',
     type: 'Personal portfolio / solo project',
@@ -106,16 +52,79 @@ const projects = [
     ],
   },
   {
-    number: '09 / 09',
-    title: 'Second Portfolio',
-    description: 'This portfolio, rebuilt with Vue 3 and Vite to present my projects, experience, and the technologies I work with.',
-    type: 'Personal portfolio / solo project',
-    image: '/projects/second-portfolio.svg',
-    link: 'https://github.com/RensKooijman/second-portofolio',
+    number: '04 / 09',
+    title: 'Attendance System',
+    description: 'A solo Laravel and Bootstrap project focused on CRUD operations, data management, and responsive attendance tracking.',
+    type: 'Attendance web application / solo project',
+    image: '/projects/site2.png',
+    link: 'https://github.com/RensKooijman/crud',
     badges: [
-      { label: 'Vue.js', src: 'https://img.shields.io/badge/Vue.js-4FC08D?style=flat-square&logo=vuedotjs&logoColor=white' },
-      { label: 'Vite', src: 'https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white' },
+      { label: 'PHP', src: 'https://img.shields.io/badge/PHP-777BB4?style=flat-square&logo=php&logoColor=white' },
+      { label: 'Laravel', src: 'https://img.shields.io/badge/Laravel-FF2D20?style=flat-square&logo=laravel&logoColor=white' },
+      { label: 'Bootstrap', src: 'https://img.shields.io/badge/Bootstrap-7952B3?style=flat-square&logo=bootstrap&logoColor=white' },
+    ],
+  },
+  {
+    number: '05 / 09',
+    title: 'Spaceships',
+    description: 'A working PHP web project built around reusable Spaceship objects and a simple browser-facing entry point.',
+    type: 'Object-oriented web project / team project',
+    image: '/projects/spaceships.png',
+    link: 'https://github.com/RensKooijman/Spaceships',
+    badges: [
+      { label: 'PHP', src: 'https://img.shields.io/badge/PHP-777BB4?style=flat-square&logo=php&logoColor=white' },
+    ],
+  },
+  {
+    number: '06 / 09',
+    title: 'Dice',
+    description: 'A digital dice application created to sharpen interface design, programming logic, and independent execution.',
+    type: 'Browser game / solo project',
+    image: '/projects/site3.png',
+    link: 'https://rens-kooijman.com/public/index.php/dice',
+    badges: [
+      { label: 'HTML5', src: 'https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white' },
+      { label: 'CSS3', src: 'https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white' },
       { label: 'JavaScript', src: 'https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=111111' },
+    ],
+  },
+  {
+    number: '07 / 09',
+    title: 'Krashosting',
+    description: 'A school team project built in 30 hours: explore and purchase hosting packages with a Spring Boot API behind the experience.',
+    type: 'Hosting platform / team project',
+    image: '/projects/site.png',
+    link: 'https://krashosting-lite.tobiasvandeven.nl/home/',
+    badges: [
+      { label: 'Java', src: 'https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white' },
+      { label: 'Spring Boot', src: 'https://img.shields.io/badge/Spring_Boot-6DB33F?style=flat-square&logo=springboot&logoColor=white' },
+      { label: 'HTML5', src: 'https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white' },
+    ],
+  },
+  {
+    number: '08 / 09',
+    title: "Valentine's Proposal",
+    description: 'A playful, mobile-friendly interactive Valentine experience with animated styling and a cat-with-flower visual.',
+    type: 'Interactive experience / solo project',
+    image: '/projects/valentine-catflower.gif',
+    link: 'http://valentine.rens-kooijman.com/',
+    badges: [
+      { label: 'HTML5', src: 'https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white' },
+      { label: 'CSS3', src: 'https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white' },
+      { label: 'JavaScript', src: 'https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=111111' },
+    ],
+  },
+  {
+    number: '09 / 09',
+    title: 'Wordle API',
+    description: 'A Laravel backend with accounts, words, leaderboards, API-token middleware, and request throttling for a Wordle-style game.',
+    type: 'Game backend / team project',
+    image: '/projects/site1.png',
+    link: 'https://github.com/RensKooijman/wordle-api',
+    badges: [
+      { label: 'PHP', src: 'https://img.shields.io/badge/PHP-777BB4?style=flat-square&logo=php&logoColor=white' },
+      { label: 'Laravel', src: 'https://img.shields.io/badge/Laravel-FF2D20?style=flat-square&logo=laravel&logoColor=white' },
+      { label: 'REST API', src: 'https://img.shields.io/badge/REST_API-02569B?style=flat-square&logo=fastapi&logoColor=white' },
     ],
   },
 ]
@@ -186,6 +195,9 @@ const isSkillCategoryZoomed = ref(false)
 const failedSkillIcons = ref(new Set())
 const activePanel = ref('events')
 const currentProjectPage = ref(1)
+const projectList = ref(null)
+const heroWords = ['web', 'software', 'bugs', 'ideas']
+const animatedHeroWord = ref(heroWords[0])
 const projectsPerPage = 5
 const skillIconOverrides = {
   PHP: 'https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/php.svg',
@@ -209,8 +221,42 @@ const paginatedProjects = computed(() => {
   return projects.slice(start, start + projectsPerPage)
 })
 
-function setProjectPage(page) {
+let heroTypingTimeout
+let heroWordIndex = 0
+let isDeletingHeroWord = true
+
+function typeHeroWord() {
+  const word = heroWords[heroWordIndex]
+  animatedHeroWord.value = isDeletingHeroWord
+    ? word.slice(0, animatedHeroWord.value.length - 1)
+    : word.slice(0, animatedHeroWord.value.length + 1)
+
+  let delay = isDeletingHeroWord ? 70 : 120
+  if (!isDeletingHeroWord && animatedHeroWord.value === word) {
+    isDeletingHeroWord = true
+    delay = 1100
+  } else if (isDeletingHeroWord && animatedHeroWord.value === '') {
+    isDeletingHeroWord = false
+    heroWordIndex = (heroWordIndex + 1) % heroWords.length
+    delay = 300
+  }
+
+  heroTypingTimeout = window.setTimeout(typeHeroWord, delay)
+}
+
+onMounted(() => {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+  heroTypingTimeout = window.setTimeout(typeHeroWord, 1300)
+})
+
+onUnmounted(() => {
+  window.clearTimeout(heroTypingTimeout)
+})
+
+async function setProjectPage(page) {
   currentProjectPage.value = page
+  await nextTick()
+  projectList.value?.querySelector('.project')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
 }
 
 function selectSkillCategory(categoryId) {
@@ -348,8 +394,10 @@ function markSkillIconFailed(skill) {
         </Transition>
         <span v-if="!isSkillCategoryZoomed" class="portrait-caption">That’s me<br />in a circle.</span>
       </div>
-      <p class="eyebrow">Designer / developer / human</p>
-      <h1 id="hero-title">Hi, I’m Rens.<br />I make the<br /><em>web</em> work.</h1>
+      <p class="eyebrow">Designer / developer / debugger</p>
+      <h1 id="hero-title" aria-label="Hi, I’m Rens. I make the web work.">
+        Hi, I’m Rens.<br />I make the<br /><em aria-hidden="true">{{ animatedHeroWord }}<span class="typing-cursor"></span></em> work.
+      </h1>
       <div class="hero-footer">
         <p class="intro">I’m a web developer who enjoys turning ideas into working experiences, learning new technology, and solving the tricky bit in the middle.</p>
         <a class="scroll-link" href="#work">See the work <span aria-hidden="true">↓</span></a>
@@ -361,7 +409,7 @@ function markSkillIconFailed(skill) {
         <p class="eyebrow">01 / Projects</p>
         <h2 id="work-title">Things I’ve<br /><em>made</em></h2>
       </div>
-      <div class="project-list">
+      <div ref="projectList" class="project-list">
         <article v-for="project in paginatedProjects" :key="project.number" class="project">
           <div class="project-media">
             <img :src="project.image" :alt="`${project.title} project preview`" />
@@ -410,19 +458,38 @@ function markSkillIconFailed(skill) {
       </div>
     </section>
 
+    <section id="quotes" class="quotes section-rule" aria-labelledby="quotes-title">
+      <div class="section-heading">
+        <p class="eyebrow">03 / Words to remember</p>
+        <h2 id="quotes-title">A little<br /><em>perspective</em>.</h2>
+      </div>
+      <div class="quotes-list" :class="{ 'quotes-list--scrollable': quotes.length > 4 }">
+        <figure v-for="quote in quotes" :key="quote.text" class="quote-card">
+          <span class="quote-mark" aria-hidden="true">“</span>
+          <blockquote>{{ quote.text }}</blockquote>
+          <figcaption>— {{ quote.attribution }}</figcaption>
+        </figure>
+      </div>
+    </section>
+
     <section id="contact" class="contact section-rule" aria-labelledby="contact-title">
-      <p class="eyebrow">03 / Contact</p>
-      <h2 id="contact-title">Have a good<br /><em>idea?</em> Say hello.</h2>
+      <p class="eyebrow">04 / Contact</p>
+      <h2 id="contact-title">Want to<br /><em>contact</em> me?</h2>
       <a class="outline-link" href="mailto:webmaster@rens-koijman.com">webmaster@rens-koijman.com <span aria-hidden="true">↗</span></a>
       <div class="social-links">
         <a href="https://www.linkedin.com/in/rens-kooijman-1130a9189/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
         <a href="https://github.com/RensKooijman" target="_blank" rel="noreferrer">GitHub ↗</a>
+        <a href="https://stackoverflow.com/users/20538588/oelimoe" target="_blank" rel="noreferrer">Stack Overflow ↗</a>
+        <a href="https://www.instagram.com/rens.kooijman" target="_blank" rel="noreferrer">Instagram ↗</a>
+        <a href="https://nl-nl.facebook.com/skoper.skoper.9" target="_blank" rel="noreferrer">Facebook ↗</a>
+        <a href="https://www.codewars.com/users/rens%20kooijman" target="_blank" rel="noreferrer">Codewars ↗</a>
+        <a href="https://open.spotify.com/user/mxjj3u24mvltkuf5mwl5a14tb" target="_blank" rel="noreferrer">Spotify ↗</a>
+        <a href="https://psnprofiles.com/oelimoe" target="_blank" rel="noreferrer">PSN Profiles ↗</a>
       </div>
     </section>
 
     <footer class="footer section-rule">
       <span>© 2025 Rens Kooijman</span>
-      <span>Made with curiosity + Vue</span>
       <a href="#top">Back to top ↑</a>
     </footer>
   </main>
